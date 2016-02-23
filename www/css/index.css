@@ -1,0 +1,68 @@
+html, body{
+    margin: 0;
+    position: static;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/background.png);
+    background-size: 100% 100%;
+}
+
+/*------------------Login------------------------*/
+.margenLogo{
+    margin-top: 22%;
+    margin-bottom: 22%;
+}
+
+.contenido{
+    border-radius: 3%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.margeninputs{
+    margin: 7%;
+}
+/*-----------------Fin--Login--------------------*/
+
+/*-------------------Plantilla--------------------*/
+
+.material-icons.md-light { 
+    color: rgba(255, 255, 255, 1); 
+}
+
+.material-icons.md-36 { 
+    font-size: 36px; 
+}
+
+.headerText{
+    font-size: 2rem;
+    margin auto;
+    color: #FFFFFF;
+}
+
+
+.header{
+    margin: 4%;
+}
+
+.contenidoProductos{
+    margin-top: 4%;
+    position: absolute;
+    width: 100%;
+    height: 81%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.remove-margin{
+    margin-bottom: 0;
+}
+
+.divfooter{
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.iconSmarket{
+    width: 140%;
+}
+/*-----------------Fin--Intefaz--------------------*/
