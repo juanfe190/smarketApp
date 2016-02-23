@@ -18,7 +18,7 @@ function backKeyDown() {
     viewName = viewChain[viewCount-2];
     if(viewCount > 1){
         viewChain.pop();
-        transition(viewName, "right");
+        transition(viewName, "right", true);
     }
     else navigator.app.exitApp();
 }
@@ -30,9 +30,9 @@ function backKeyDown() {
 *
 * @param String con el nombre del view
 */
-function transition(viewName, direction){
+function transition(viewName, direction, goBack){
     direction=direction || "left";
-
+    goBack = goBack || false;
     var options = {
         "href" : null,
         "direction"        : direction, // 'left|right|up|down', default 'left' (which is like 'next')
@@ -47,8 +47,8 @@ function transition(viewName, direction){
             setTimeout(function(){
                 window.plugins.nativepagetransitions.executePendingTransition();
                 addListeners();
-                if(viewName!=='main') viewChain.push(viewName);
-                navigator.notification.alert(viewChain);
+                if(viewName!=='main' && !goBack) viewChain.push(viewName);
+                window.plugins.toast.show(viewChain, 'long', 'center');
             }, 500);
         }); 
     });
