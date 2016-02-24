@@ -51,8 +51,8 @@ function transition(viewName, direction, goBack){
             setTimeout(function(){
                 window.plugins.nativepagetransitions.executePendingTransition();
                 addListeners();
-                if(viewName!=='main' && !goBack) viewChain.push(viewName);
-            }, 500);
+                if(viewName!==viewChain[0] && !goBack) viewChain.push(viewName);
+            }, 300);
         }); 
     });
 }
