@@ -1,0 +1,27 @@
+{
+  "name": "smarketapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanfe190/smarketApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanfe190/smarketApp/issues"
+  },
+  "homepage": "https://github.com/juanfe190/smarketApp#readme",
+  "dependencies": {
+    "babel-loader": "^6.2.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0",
+    "webpack": "^1.12.14"
+  }
+}
