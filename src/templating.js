@@ -1,3 +1,9 @@
+export default class templating {
+	start(){
+		startTemplating();
+	}
+}
+
 /**
 * Carga el view del cual se hereda (template), y crea
 * una lista con los elementos tipo section que
@@ -33,6 +39,8 @@ function handleYields(template, sections){
 			}
 		});
 	});
+
+	console.log('Templated ended');
 }
 
 /**

@@ -1,4 +1,6 @@
+import templating from './templating';
 var viewChain=['main'];
+var template = new templating();
 // Function que agrega listener a elementos que cambiaran de views
 function addListeners(){
     $("[link-to-view]").click(function(e){
@@ -12,8 +14,9 @@ function addListeners(){
 
 //Listener para el boton back del telefono
 function backKeyDown() { 
-    viewCount = viewChain.length;
-    viewName = viewChain[viewCount-2];
+    var viewCount = viewChain.length;
+    var viewName = viewChain[viewCount-2];
+
     if(viewCount > 1){
         viewChain.pop();
         transition(viewName, "right", true);
@@ -30,7 +33,7 @@ function backKeyDown() {
 * @param String direccion de la animacion ('left', 'right', 'up', 'down') default 'left'
 * @param Boolean esta llendo atras ? default false
 */
-export function transition(viewName, direction, goBack){
+function transition(viewName, direction, goBack){
     direction=direction || "left";
     goBack = goBack || false;
     var options = {
@@ -45,8 +48,9 @@ export function transition(viewName, direction, goBack){
         var wrapper = $("#index");
         wrapper.load("views/"+viewName+".html", function(){
             setTimeout(function(){
-                window.plugins.nativepagetransitions.executePendingTransition();
+                template.start();
                 addListeners();
+                window.plugins.nativepagetransitions.executePendingTransition();
                 if(viewName!==viewChain[0] && !goBack) viewChain.push(viewName);
             }, 300);
         }); 
