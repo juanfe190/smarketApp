@@ -140,6 +140,8 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	var callback;
+
 	var templating = function () {
 		function templating() {
 			_classCallCheck(this, templating);
@@ -147,7 +149,8 @@
 
 		_createClass(templating, [{
 			key: "start",
-			value: function start() {
+			value: function start(_callback) {
+				callback = _callback;
 				startTemplating();
 			}
 		}]);
@@ -179,6 +182,7 @@
 	*
 	* @param HTML de view (template)
 	* @param DOM elements 'sections'
+	* @param Function callback when rendered is done
 	*/
 	function handleYields(template, sections) {
 		var yields = template.find("[templating-yield]");
@@ -193,7 +197,11 @@
 			});
 		});
 
-		console.log('Templated ended');
+		if (typeof callback !== 'undefined') {
+			$("img").load(function () {
+				callback();
+			});
+		}
 	}
 
 	/**

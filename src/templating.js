@@ -1,5 +1,7 @@
+var callback;
 export default class templating {
-	start(){
+	start(_callback){
+		callback = _callback;
 		startTemplating();
 	}
 }
@@ -26,6 +28,7 @@ function template(extending){
 *
 * @param HTML de view (template)
 * @param DOM elements 'sections'
+* @param Function callback when rendered is done
 */
 function handleYields(template, sections){
 	var yields = template.find("[templating-yield]");
@@ -39,8 +42,12 @@ function handleYields(template, sections){
 			}
 		});
 	});
-
-	console.log('Templated ended');
+	
+	if(typeof callback !== 'undefined'){
+		$("img").load(function(){
+			callback();
+		});
+	}
 }
 
 /**

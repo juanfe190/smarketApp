@@ -50,7 +50,7 @@ function transition(viewName, direction, goBack){
             setTimeout(function(){
                 template.start();
                 addListeners();
-                window.plugins.nativepagetransitions.executePendingTransition();
+                   window.plugins.nativepagetransitions.executePendingTransition();
                 if(viewName!==viewChain[0] && !goBack) viewChain.push(viewName);
             }, 300);
         }); 
