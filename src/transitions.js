@@ -31,7 +31,7 @@ function backKeyDown() {
 *
 * @param String con el nombre del view
 * @param String direccion de la animacion ('left', 'right', 'up', 'down') default 'left'
-* @param Boolean esta llendo atras ? default false
+* @param Boolean esta ygit endo atras ? default false
 */
 function transition(viewName, direction, goBack){
     direction=direction || "left";

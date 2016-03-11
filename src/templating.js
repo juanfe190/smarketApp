@@ -28,7 +28,6 @@ function template(extending){
 *
 * @param HTML de view (template)
 * @param DOM elements 'sections'
-* @param Function callback when rendered is done
 */
 function handleYields(template, sections){
 	var yields = template.find("[templating-yield]");
@@ -67,7 +66,7 @@ function startTemplating(){
 	 		break;
 
 	 	default:
-	 		console.log("Imposible extender de dos views, maximo un extend");
+	 		console.error("Imposible extender de dos views, maximo un extend");
 	 }
 }
 startTemplating();
